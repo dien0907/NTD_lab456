@@ -18,21 +18,16 @@ namespace NTD_lab456.Models
         [Required]
         [StringLength(255)]
         public string Place { get; set; }
-        public DateTime DataTime { get; set; }
-
-        private Category category;
-
-        public Category GetCategory()
-        {
-            return category;
-        }
-
-        public void SetCategory(Category value)
-        {
-            category = value;
-        }
-
+        public DateTime DateTime { get; set; }
+        public Category Category { get; set; }
         [Required]
         public byte CategoryId { get; set; }
+    }
+    public class Category
+    {
+        public byte Id { get; set; }
+        [Required]
+        [StringLength(255)]
+        public string Name { get; set; }
     }
 }
